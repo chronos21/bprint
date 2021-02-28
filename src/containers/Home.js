@@ -54,7 +54,7 @@ export default function Home() {
                                 </div>
                                 <div className="row justify-content-end">
                                     <div className="col-lg-5">
-                                        <p className="fs-11">Mulai dari stiker, banner, brosur, undangan, kop surat, nota, packing box, surat Yasin, kalender, kartu nama &mdash; hubungi dulu aja.</p>
+                                        <p className="fs-11">Mulai dari stiker, banner, brosur, undangan, kop surat, nota, packing box, surat Yasin, kalender, kartu nama &mdash; <a href="#kontak" className="hubungi-aja" onClick={() => handleScroll('#kontak')}>hubungi dulu aja.</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -169,10 +169,10 @@ export default function Home() {
                 <section className="container pt-60" id="kontak">
                     <h1 className="section-title">Kontak</h1>
                     <ScrollAnimation animateIn="fadeIn">
-                        <div className="row gx-5">
-                            <div className="col-lg-7">
+                        <div className="row gx-5 justify-content-center">
+                            <div className="col-lg-6">
                                 <div className="w-100">
-                                    <iframe title="Peta" width="100%" height="450" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(billy%20printing)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                                    <iframe title="Peta" width="100%" height="400" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(billy%20printing)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                                     <a href="https://www.maps.ie/route-planner.htm">Google Route Planner</a>
                                 </div>
                             </div>
@@ -180,7 +180,7 @@ export default function Home() {
                             <div className="col-lg-5">
                                 <div className="def-p pt-lg-3">
                                     <p className="mb-0"><b>billy printing</b></p>
-                                    <p>Jl. Joglo Raya No.9, RT.13/RW.2, Joglo, Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11640</p>
+                                    <p className="mb-2">Jl. Joglo Raya No.9, RT.13/RW.2, Joglo, Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11640</p>
                                     
                                     <div className="d-flex align-items-center">
                                         <div className="me-lg-2">
