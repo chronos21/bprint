@@ -200,8 +200,16 @@ iframe{
     border-radius: 8px;
 }
 
+a{
+    text-decoration: none
+}
 a, a:hover{
     color: inherit;
+}
+
+a:hover{
+    text-decoration: underline
+
 }
 
 
