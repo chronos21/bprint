@@ -81,6 +81,8 @@ header{
     width: 100%;
     object-fit: cover;
     object-position: top;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .main-text{
@@ -150,10 +152,21 @@ header{
     background: #c4f7ec;
     height: 250px;
     padding: 20px;
+    display: block;
+    border-radius: 8px;
 }
 
 .gallery-img{
-    transition: 0.3s ease-out;
+    transition: 0.2s ease-out;
+}
+
+.gallery-img img{
+    border-radius: 8px;
+}
+
+#tentang-imgs{
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .gallery-img:hover{
@@ -169,7 +182,7 @@ header{
     margin-bottom: -1rem;
 }
 
-#beranda {
+#beranda-scroll {
     scroll-margin-top: 75px;
 }
 
@@ -182,6 +195,15 @@ header{
 .hubungi-aja:hover{
     font-weight: 600;
 }
+
+iframe{
+    border-radius: 8px;
+}
+
+a, a:hover{
+    color: inherit;
+}
+
 
 @keyframes blink{
     50%{
@@ -222,13 +244,21 @@ section{
         overflow-x: hidden;
     }
     
-    #header-links{
+    
+    #header-links-wrapper{
         flex-wrap: nowrap;
         overflow-x: auto;
     }
 
-    #header-links > *{
+    #header-links-wrapper::-webkit-scrollbar{
+        display: none;
+    }
+    #header-links-wrapper > *{
         width: auto;
+    }
+
+    .header-links li {
+        padding: 5px 0;
     }
 
     #beranda .main-text{
@@ -242,37 +272,54 @@ section{
         margin-top: -10px;
     }
     .main-img img{
-        height: 200px;
+        height: 160px;
     }
 
     .pt-60{
-        padding-top: 30px;
+        padding-top: 40px;
+    }
+
+    .project-img{
+        height: 180px;
     }
 
     .section-title{
-        margin-bottom: 20px;
-        text-align: left;
+        margin-bottom: 15px;
     }
 
-    #tentang-kami img{
+    #tentang-imgs .col-4 img{
         width: 100%;
-        padding: 2px;
         height: 230px;
         filter: unset;
     }
 
+    #tentang-imgs .col-4:nth-child(2) img{
+        padding: 0 4px;
+    }
+
+
+    
     #gallery-imgs img{
         height: auto;
     }
 
     .container{
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
-
     section{
+        border-top: 1px solid #f2f2f2;
         margin-bottom: 30px;
+        scroll-margin-top: 40px
+    }
+
+    section:first-child{
+        border-color: transparent;
+    }
+
+    #beranda-scroll{
+        scroll-margin: 300px
     }
 
     iframe{

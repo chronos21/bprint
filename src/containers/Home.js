@@ -12,11 +12,11 @@ export default function Home() {
         <>
             <header className="sticky-top">
                 <nav className="container-fluid main-header " >
-                    <div className="row align-items-center" id="header-links">
+                    <div className="row align-items-center" id="header-links-wrapper">
                         <div className="col-lg-4">
                             <ul className="header-links">
                                 <li>
-                                    <a href="#beranda" onClick={() => handleScroll('#beranda')}>Beranda</a>
+                                    <a href="#beranda-scroll" onClick={() => handleScroll('#beranda-scroll')}>Beranda</a>
                                 </li>
                                 <li>
                                     <a href="#proyek" onClick={() => handleScroll('#proyek')}>Proyek</a>
@@ -27,12 +27,15 @@ export default function Home() {
                             </ul>
                         </div>
                         <div className="col-lg-4 order-first order-lg-2">
-                            <h4 className="text-center">billy printing</h4>
+                            <h4 className="text-center" onClick={() => handleScroll('#beranda-scroll')}>Billy Printing</h4>
                         </div>
                         <div className="col-lg-4 order-last">
                             <ul className="header-links justify-content-end">
                                 <li>
                                     <a href="#galeri" onClick={() => handleScroll('#galeri')}>Galeri</a>
+                                </li>
+                                <li>
+                                    <a href="#partner" onClick={() => handleScroll('#partner')}>Partner</a>
                                 </li>
                                 <li>
                                     <a href="#kontak" onClick={() => handleScroll('#kontak')}>Kontak</a>
@@ -42,6 +45,8 @@ export default function Home() {
                     </div>
                 </nav>
             </header>
+            <div id="beranda-scroll"></div>
+
             <main className="ov-x-hide">
                 <section className="container-fluid" id="beranda">
                     <div className="row justify-content-center">
@@ -68,7 +73,7 @@ export default function Home() {
                 <section className="container pt-60" id="proyek">
                     <h1 className="section-title mb-lg-4">Proyek</h1>
                     <div className="row justify-content-center mb-lg-5 mb-4">
-                        <div className="col-lg-10 text-lg-center text-start">
+                        <div className="col-lg-10 text-center">
                             <p className="fs-12">
                                 Sudah 10 tahun sejak kami membuka percetakan ini. Terlalu banyak proyek yang kami telah kerjakan: ada banyak pengalaman, inspirasi, tantangan, dan senyuman pelanggan. Berikut ini adalah beberapa hasil karya kami.
                             </p>
@@ -78,13 +83,13 @@ export default function Home() {
                         <div className="row gx-3 mb--4">
                             {
                                 [1, 2, 3, 4, 5, 6, 7, 8].map(item => (
-                                    <div className="col-lg-3 col-6 mb-lg-4 mb-3" key={item}>
+                                    <div className="col-lg-3 col-6 mb-4" key={item}>
                                         <div className="project-item">
-                                            <div className="project-img mb-2">
+                                            <a className="project-img shadow-sm mb-lg-2 mb-1" href="#project">
                                                 <img src="" alt="" className="img-fluid" />
-                                            </div>
-                                            <div className="fs-12 ps-2">
-                                                <p><b>Lorem, ipsum dolor</b></p>
+                                            </a>
+                                            <div className="fs-12 ps-lg-2 ps-1">
+                                                <p><b><a href="#project">Lorem, ipsum dolor</a></b></p>
                                                 <p className="text-muted">Oktober 2020</p>
                                             </div>
                                         </div>
@@ -99,7 +104,7 @@ export default function Home() {
                 <section className="container pt-60 mb-lg-3" id="tentang-kami">
                     <h1 className="section-title">Tentang Kami</h1>
                     <ScrollAnimation animateIn="fadeIn">
-                        <div className="row gx-0 mb-5">
+                        <div className="row gx-0 mb-lg-5 mb-3" id="tentang-imgs">
                             <div className="col-4">
                                 <img src="/images/about1.jpeg" className="img-cover filter-gray img-top " height="300" alt="Gambar tentang kami 1" />
                             </div>
@@ -119,7 +124,7 @@ export default function Home() {
                                 </h2>
                                 <p>&mdash; Nanir Hasan</p>
                                 <small>
-                                    CEO billy printing
+                                    CEO Billy Printing
                             </small>
                             </div>
                             <div className="col-lg-8">
@@ -166,19 +171,36 @@ export default function Home() {
                     </ScrollAnimation>
                 </section>
 
+                <section className="container pt-60" id="partner">
+                    <h1 className="section-title mb-lg-5">Partner</h1>
+                    <ScrollAnimation animateIn="fadeIn">
+                        <div className="row row-cols-lg-5 row-cols-2" id="partner-imgs">
+                            {
+                                [1, 2, 3, 4, 5,].map(item => (
+                                    <div className="col mb-lg-3 mb-2 gx-lg-4 gx-2" key={item}>
+                                        <div className="gallery-img">
+                                            <img src="https://via.placeholder.com/150" alt="Gambar galery" className="img-cover" height="100" />
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </ScrollAnimation>
+                </section>
+
                 <section className="container pt-60" id="kontak">
                     <h1 className="section-title">Kontak</h1>
                     <ScrollAnimation animateIn="fadeIn">
                         <div className="row gx-5 justify-content-center">
                             <div className="col-lg-7 mb-3 mb-lg-0">
                                 <div className="w-100">
-                                    <iframe title="Peta" width="100%" height="400" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(billy%20printing)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                                    <iframe className="shadow-sm" title="Peta" width="100%" height="400" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(billy%20printing)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                                 </div>
                             </div>
 
                             <div className="col-lg-5">
                                 <div className="def-p pt-lg-3">
-                                    <p className="mb-0"><b>billy printing</b></p>
+                                    <p className="mb-0"><b>Billy Printing</b></p>
                                     <p className="mb-2">Jl. Joglo Raya No.9, RT.13/RW.2, Joglo, Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11640</p>
 
                                     <div className="d-flex align-items-center">
@@ -221,7 +243,7 @@ export default function Home() {
             </main>
 
             <div>
-                <a href="https://wa.me/6281393261259" target="_blank" rel="noreferrer" className="whatsapp-foot btn">
+                <a href="https://wa.me/6281393261259" target="_blank" rel="noreferrer" className="whatsapp-foot btn shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-whatsapp" viewBox="0 0 16 16">
                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
                     </svg>
