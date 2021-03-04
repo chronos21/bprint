@@ -188,9 +188,100 @@ header{
         opacity: 1;
         text-decoration: underline;
     }
-    
 }
 
 section{
     margin-bottom: 60px;
+}
+
+.whatsapp-foot{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 35px;
+    background: #4FCE5D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 20px;
+}
+
+.whatsapp-foot:focus{
+    box-shadow:  0 0 0.25rem #435A64
+}
+
+.whatsapp-foot svg{
+    height: 45px;
+    width: 45px;
+    color: white;
+}
+
+@media only screen and (max-width: 991px){
+    .ov-x-hide{
+        overflow-x: hidden;
+    }
+    
+    #header-links{
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    #header-links > *{
+        width: auto;
+    }
+
+    #beranda .main-text{
+        margin-top: 25px;
+    }
+
+    .main-text p{
+        margin-left: 0;
+    }
+    .main-img{
+        margin-top: -10px;
+    }
+    .main-img img{
+        height: 200px;
+    }
+
+    .pt-60{
+        padding-top: 30px;
+    }
+
+    .section-title{
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    #tentang-kami img{
+        width: 100%;
+        padding: 2px;
+        height: 230px;
+        filter: unset;
+    }
+
+    #gallery-imgs img{
+        height: auto;
+    }
+
+    .container{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    section{
+        margin-bottom: 30px;
+    }
+
+    iframe{
+        height: 300px;
+    }
+    .whatsapp-foot{
+        width: 65px;
+        height: 65px;
+        right: 15px;
+        bottom: 20px;
+    }
 }
